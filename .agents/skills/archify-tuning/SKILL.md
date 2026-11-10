@@ -1,6 +1,6 @@
 ---
 name: archify-tuning
-description: Improve Archify diagram accuracy, visual quality and complete authoring speed with fewer repairs. Use for generation experiments or evaluating changes to layout, routing, diagnostics, authoring instructions and acceptance rules against actual diagrams and agent traces.
+description: 提高 Archify 图表的准确性、视觉质量和完整创作流程的速度，减少返工。适用于生成实验，或结合实际图表与代理执行轨迹评估布局、连线路径、诊断、编写说明和验收规则的变更。
 metadata:
   internal: true
 ---

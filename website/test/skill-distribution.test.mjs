@@ -5,6 +5,7 @@ import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { parse } from 'yaml';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { stageSkillDistribution } from '../scripts/stage-skill-distribution.mjs';
 
@@ -20,6 +21,10 @@ test('discovery archive preserves every canonical package file without its wrapp
     assert.equal(index.skills.length, 1);
     const [entry] = index.skills;
     assert.equal(entry.name, 'archify');
+    const skillText = fs.readFileSync(path.join(repo, 'archify/SKILL.md'), 'utf8');
+    const description = parse(skillText.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)[1]).description;
+    assert.equal(entry.description, description);
+    assert.match(entry.description, /[\u4e00-\u9fff]/);
     assert.equal(entry.type, 'archive');
     const archive = fileURLToPath(new URL(entry.url, pathToFileURL(indexPath)));
     assert.equal(entry.digest, `sha256:${createHash('sha256').update(fs.readFileSync(archive)).digest('hex')}`);

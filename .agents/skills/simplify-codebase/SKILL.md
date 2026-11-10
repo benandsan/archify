@@ -1,6 +1,6 @@
 ---
 name: simplify-codebase
-description: Simplification audit or authorized codebase simplification whose stated objective is to remove accidental complexity. Use for evidence-backed deletion or consolidation of dead code, duplicate state, redundant APIs or layers, ownerless abstractions, obsolete compatibility or design records, and over-engineering in any language; also use for 代码简化 or 熵回收. Do not use for general code review, onboarding, style-only refactoring, or performance tuning.
+description: 开展简化审查，或在获得授权时简化代码库，目标是消除意外复杂性。适用于有证据支持地删除或合并死代码、重复状态、冗余 API 或层级、无人维护的抽象、过时兼容逻辑或设计记录，以及任何语言中过度设计的部分；也适用于代码简化或熵回收。不用于一般代码审查、入门导览、仅涉及风格的重构或性能调优。
 metadata:
   internal: true
 ---

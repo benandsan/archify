@@ -1,6 +1,6 @@
 ---
 name: test-value
-description: Improve test value and feedback cost when auditing slow, flaky, redundant or brittle tests; choosing tests during implementation; or reviewing test changes before a commit or PR. Keep ordinary implementation and pre-commit use scoped to the affected behavior, not a repository-wide audit.
+description: 审计缓慢、不稳定、重复或脆弱的测试，实施变更时选择测试，或在提交及 PR 前审查测试改动，以提高测试价值并降低反馈成本。普通实现与提交前检查应只覆盖受影响的行为，不扩展为全仓库审计。
 metadata:
   internal: true
 ---

@@ -1,6 +1,6 @@
 ---
 name: archify
-description: "Create validated architecture, workflow, sequence, data-flow, lifecycle/state, ERD, class, tree, timeline, and waterfall diagrams as explorable standalone HTML with dark/light themes, motion and image/SVG/WebM export. Accept requirements or Mermaid; inspect repository evidence for code-backed diagrams. Use when visualizing systems, API calls, pipelines, schemas, histories, timings, or everyday steps, parts, relationships and states. Also turn an answer into a one-page explainer, with the conclusion first, structured panels, native diagrams and charts, when the user asks for a page, an explainer or an answer to share (做成一页, 用页面讲), or proactively when the user's rules opt in with an [archify explainer: ...] line. Not for dashboards."
+description: "创建并验证架构、工作流、时序、数据流、生命周期/状态、ERD、类、树状、时间线及瀑布图，以支持探索的独立 HTML 呈现，提供明暗主题、动画及图片/SVG/WebM 导出。可根据需求或 Mermaid 制图；基于代码的图表需核查仓库证据。适用于可视化系统、API 调用、流水线、模式、历史、时间安排，以及日常步骤、组成部分、关系和状态。用户要求一页说明、可分享的答案、做成一页或用页面讲时，也可把答案组织为结论先行、结构化面板、原生图表的一页说明；用户规则通过 [archify explainer: ...] 启用时也可主动使用。不用于仪表盘。"
 license: Apache-2.0
 metadata:
   version: "3.2"

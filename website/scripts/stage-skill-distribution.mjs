@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { parse } from 'yaml';
 import { stageCleanSkill } from '../../scripts/stage-clean-skill.mjs';
 
 // Reuse the ZIP/DSH file selection and manifest cleanup. The discovery protocol
@@ -18,6 +19,8 @@ export function stageSkillDistribution(repo, target) {
       skill, archive, '--mode-manifest', modes, '--contents-only'], { stdio: 'pipe' });
     const bytes = fs.readFileSync(archive);
     const hash = createHash('sha256').update(bytes).digest('hex');
+    const skillText = fs.readFileSync(path.join(skill, 'SKILL.md'), 'utf8');
+    const description = parse(skillText.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)[1]).description;
     const directory = path.join(target, '.well-known/agent-skills');
     if (fs.existsSync(directory)) throw new Error('Public assets collide with generated Skill distribution');
     fs.mkdirSync(directory, { recursive: true });
@@ -27,7 +30,7 @@ export function stageSkillDistribution(repo, target) {
       $schema: 'https://schemas.agentskills.io/discovery/0.2.0/schema.json',
       skills: [{
         name: 'archify',
-        description: 'Create validated interactive diagrams and one-page explainers with your AI agent.',
+        description,
         type: 'archive', url: `./${filename}`, digest: `sha256:${hash}`,
       }],
     }, null, 2)}\n`);

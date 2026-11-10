@@ -23,11 +23,11 @@ test('skill description is portable across 1024-character runtimes and remains s
   assert.ok(description.length <= 1024, `description is ${description.length} characters; maximum is 1024`);
   assert.ok(Buffer.byteLength(description, 'utf8') <= 1024, 'description must also fit a 1024-byte runtime limit');
 
-  for (const trigger of ['architecture', 'workflow', 'sequence', 'data-flow', 'lifecycle', 'Mermaid']) {
-    assert.match(description, new RegExp(`\\b${trigger}\\b`, 'i'), `description must retain the ${trigger} trigger`);
+  for (const trigger of ['架构', '工作流', '时序', '数据流', '生命周期', 'Mermaid']) {
+    assert.match(description, new RegExp(trigger, 'i'), `description must retain the ${trigger} trigger`);
   }
-  assert.match(description, /standalone HTML/i);
-  assert.match(description, /Use when/i);
+  assert.match(description, /独立 HTML/i);
+  assert.match(description, /适用于/i);
 });
 
 test('literal packaged-skill path references resolve inside the installed skill root', () => {

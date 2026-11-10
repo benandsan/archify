@@ -1,6 +1,6 @@
 ---
 name: archify-review
-description: Review Archify issues, PRs, or code through value, cost, and impact to support evidence-based maintenance decisions. Use for issue triage, change reviews, and code quality assessments.
+description: 审查 Archify 的问题、PR 或代码，依据价值、成本和影响作出有证据的维护决策。适用于问题分类、变更审查和代码质量评估。
 metadata:
   internal: true
 ---
